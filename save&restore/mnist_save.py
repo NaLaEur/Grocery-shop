@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jul 25 15:37:08 2017
-
-@author: 代码医生
-@blog：http://blog.csdn.net/lijin6249
-"""
-
 import tensorflow as tf #导入tensorflow库
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
@@ -56,9 +48,7 @@ with tf.Session() as sess:
         # 显示训练中的详细信息
         if (epoch+1) % display_step == 0:
             print ("Epoch:", '%04d' % (epoch+1), "cost=", "{:.9f}".format(avg_cost))
-        
-        if epoch % 5 == 0:
-            save_path = saver.save(sess, model_path, global_step = epoch)
+     
     print( " Finished!")
 
     # 测试 model
